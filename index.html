@@ -1,0 +1,230 @@
+</html><!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="icon" href="logo.png" type="image">
+<title> 
+	Monitoring Polusi Udara
+</title>
+	
+<style>
+	/* CSS untuk body */
+	body {
+		height: 100vh; /* 100% dari tinggi viewport */
+		margin: 0; /* Hapus margin default */
+		padding: 0; /* Hapus padding default */
+		background: linear-gradient(to bottom, #f0f8ff, #b4d5f5, #f0f8ff); /* Gradasi tiga warna untuk latar belakang */
+	}
+
+    /* CSS untuk header */
+    .header {
+        background-color: #333; /* Warna latar belakang header */
+        color: #fff; /* Warna teks header */
+        text-align: center; /* Pusatkan teks */
+        padding: 20px; /* Ruang dalam header */
+        font-size: 48px;
+        font-family: cursive;
+    }
+
+    /* CSS untuk membuat header responsif */
+    @media (max-width: 600px) {
+        .header {
+            font-size: 24px; /* Ukuran font yang lebih besar untuk perangkat seluler */
+        }
+    }
+
+    /* CSS untuk status container */
+    .status-container {
+        /* position: absolute; */
+        margin: 10px 0px 0px 0px;
+		/* top: 5px; Posisi atas status */
+        /* right: 10px; */
+		display: flex;
+		justify-content: right;
+        background-color: rgba(0, 0, 0, 0); /* Kotak transparan */
+        color: #fff; /* Warna teks status */
+        padding: 10px;
+        border-radius: 5px;
+        font-size: 18px;
+    }
+
+    /* CSS untuk ikon status */
+    .status-icon {
+        font-size: 24px;
+        margin-right: 10px;
+    }
+
+    /* CSS untuk status dengan berbagai warna */
+    .status-good {
+        color: green;
+    }
+
+    .status-warning {
+        color: yellow;
+    }
+
+    .status-bad {
+        color: red;
+    }
+
+    /* CSS untuk card container */
+    .card-container {
+        margin: 0px 10px 10px 10px;  /* Ruang di sekitar card */
+        display: flex;		/* Tampilkan card dalam satu baris */
+        gap: 5px;
+		justify-content: space-between; /* Beri jarak di antara kedua card */
+    }
+
+    /* CSS untuk card */
+    .card {
+        width: 45%; /* Lebar card sekitar 45% dari lebar layar */
+        background-color: #f5f5f5; /* Warna latar belakang card */
+        border: 1px solid #ccc; /* Garis tepi card */
+		border-radius: 10px;
+		border-color: black;
+        padding: 20px; /* Ruang dalam card */
+        text-align: center; /* Pusatkan konten card */
+    }
+
+    /* CSS untuk ikon */
+    .icon {
+        font-size: 24px; /* Ukuran ikon */
+    }
+
+    /* CSS untuk membuat card responsif */
+    @media (max-width: 600px) {
+        .card {
+            width: 100%; /* Penuh lebar saat layar kecil */
+            /* margin: 10px;*/ /* Beri sedikit ruang di antara card */
+        }
+    }
+	
+	/* CSS untuk container baru */
+    .info-container {
+        background-color: #f5f5f5; /* Warna latar belakang container */
+        border: 1px solid #ccc; /* Garis tepi container */
+        border-radius: 10px;
+		border-color: black;
+		padding: 20px; /* Ruang dalam container */
+        text-align: center; /* Pusatkan konten container */
+        font-size: 24px; /* Ukuran font */
+        margin: 10px; /* Ruang di sekitar container */
+    }
+
+    /* CSS untuk jam digital */
+    .digital-clock {
+		margin-top: 10px;
+        font-family: "Courier New", monospace; /* Gaya font yang sesuai dengan jam digital */
+        color: #333; /* Warna teks jam digital */
+        font-size: 36px; /* Ukuran font jam digital */
+    }
+	
+	/* CSS untuk header, status, card (sudah ada) dan footer */
+    .footer {
+        background-color: #333; /* Warna latar belakang footer */
+        color: #fff; /* Warna teks footer */
+        text-align: center; /* Pusatkan teks */
+        padding: 20px; /* Ruang dalam footer */
+    }
+
+    .social-media-list {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .social-media-item {
+        margin: 0 10px;
+    }
+
+    .social-media-link {
+        color: #fff;
+        text-decoration: none;
+    }
+	
+	.isi {
+	min-height: 76.5%;
+	display: flex;
+	flex-direction: column;
+	}
+	
+</style>
+</head>
+<body>
+<div class="isi">
+    <!-- Bagian header -->
+    <div class="header">
+        Monitoring Polusi Udara
+    </div>
+
+    <!-- Bagian status -->
+    <div class="status-container status-good">
+        <i class="fas fa-circle status-icon"></i>
+        Kualitas Udara Baik
+    </div>
+    
+    <!-- Bagian card -->
+    <div class="card-container">
+        <div class="card">
+            <i class="fas fa-thermometer-half icon" style="color:#059e8a;"></i>
+            <h2>Temperature</h2>
+        </div>
+        <div class="card">
+            <i class="fas fa-tint icon" style="color:#00add6;"></i>
+            <h2>Humidity</h2>
+        </div>
+    </div>
+	
+	<!-- Container baru untuk informasi tanggal, waktu, dan jam digital -->
+    <div class="info-container">
+        <div id="date-time">
+            Loading...
+        </div>
+        <div class="digital-clock" id="digital-clock">
+            00:00:00
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk mengupdate tanggal, waktu, dan jam digital
+        function updateInfo() {
+            const dateTimeElement = document.getElementById("date-time");
+            const digitalClock = document.getElementById("digital-clock");
+
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
+            const dateTimeString = now.toLocaleDateString('id-ID', options);
+            const timeString = now.toLocaleTimeString();
+
+            dateTimeElement.textContent = dateTimeString;
+            digitalClock.textContent = timeString;
+        }
+
+        // Panggil fungsi pertama kali
+        updateInfo();
+
+        // Perbarui tanggal, waktu, dan jam digital setiap detik
+        setInterval(updateInfo, 1000);
+    </script>
+	</div>
+	<!-- Bagian footer -->
+    <div class="footer">
+        <p>Projek Lintas Prodi Robotik Mekatronik</p>
+        <p>Author: David Mario</p>
+        <ul class="social-media-list">
+            <li class="social-media-item">
+                <a class="social-media-link" href="https://wa.me/+6281289324751" target="_blank"><i class="fab fa-whatsapp"></i> Whatsapp</a>
+            </li>
+            <li class="social-media-item">
+                <a class="social-media-link" href="https://www.instagram.com/dmys_6/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            </li>
+            <li class="social-media-item">
+                <a class="social-media-link" href="https://github.com/055DavidMario" target="_blank"><i class="fab fa-github"></i> Github</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
