@@ -10,6 +10,13 @@
 	
 <style>
 	/* CSS untuk body */
+	html {
+	  font-family: Arial;
+	  display: inline-block;
+	  margin: 0px auto;
+	  text-align: center;
+	}
+
 	body {
 		height: 100vh; /* 100% dari tinggi viewport */
 		margin: 0; /* Hapus margin default */
@@ -71,7 +78,7 @@
     .card-container {
         margin: 0px 10px 10px 10px;  /* Ruang di sekitar card */
         display: flex;		/* Tampilkan card dalam satu baris */
-        gap: 5px;
+		gap: 5px;
 		justify-content: space-between; /* Beri jarak di antara kedua card */
     }
 
@@ -97,6 +104,9 @@
             width: 100%; /* Penuh lebar saat layar kecil */
             /* margin: 10px;*/ /* Beri sedikit ruang di antara card */
         }
+		.card-container {
+			flex-wrap: wrap;
+		}
     }
 	
 	/* CSS untuk container baru */
@@ -166,7 +176,7 @@
     </div>
     
     <!-- Bagian card -->
-    <div class="card-container">
+	<div class="card-container">
         <div class="card">
             <i class="fas fa-thermometer-half icon" style="color:#059e8a;"></i>
             <h2>Temperatur</h2>
@@ -175,6 +185,10 @@
             <i class="fas fa-tint icon" style="color:#00add6;"></i>
             <h2>Kelembapan</h2>
         </div>
+		<div class="card">
+		  <i class="fas fa-gas-pump icon" style="color:red;"></i>
+		  <h2 class="gas-label">Gas</h2>
+		</div>
     </div>
 	
 	<!-- Container baru untuk informasi tanggal, waktu, dan jam digital -->
